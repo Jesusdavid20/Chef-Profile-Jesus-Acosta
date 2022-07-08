@@ -9,13 +9,13 @@
 
 body {
     /*background-color: #CFC9C7;*/
-    background-color: rgb(73, 57, 57);
+    background-color: rgb(73, 57, 57) !important;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: black;
-    font-family: oswald;
+    font-family: oswald !important;
 }
 
 /* HEADER PARA MOBILE */
@@ -132,8 +132,8 @@ h1.container {
 }
 
 .logoMainMobile {
-    margin: 0 auto;
-    max-width: 100px;
+    margin: 0 auto !important;
+    max-width: 100px !important;
 }
 
 .logoMainMobile img {
@@ -604,10 +604,15 @@ hr {
 }
 
 nav.footerMenu ul li {
-    font-family: Oswald;
-    font-size: 20px;
-    list-style: none;
-    text-decoration: none;
+    font-family: Oswald !important;
+    color: black !important;
+    font-size: 20px !important;
+    list-style: none !important;
+    text-decoration: none !important;
+}
+
+nav.footerMenu a {
+    color: black !important;
 }
 
 nav.footerMenu ul li:hover {

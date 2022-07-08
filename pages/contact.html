@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../styles/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=>, initial-scale=1.0">
     <title>Chef profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
     <header class="container">
@@ -13,7 +16,7 @@
             <a href="../index.html"><img src="../assets/Logo de chef1.jpg" alt="logochef1"></a>
         </div>
         <nav class="container">
-            <ul class="menuArriba">
+            <ul class="menuArriba container">
                 <li>
                     <a href="../index.html">Inicio</a>
                 </li>
@@ -71,7 +74,7 @@
             <input type="text" placeholder="Buscar">
         </div>
     </div>
-    <p class="container">Mi restaurant esta ubicado en: <br>El Salvador 5218 Soho, CP 1414 Buenos Aires</p>
+    <!-- <p class="container">Mi restaurant esta ubicado en: <br>El Salvador 5218 Soho, CP 1414 Buenos Aires</p>
     <h2 class="container little__titles">Como contactarme:</h2>
     <div class="container formContainer">
         <form class="mainForm" method="get" action="" enctype="application/x-www-form-urlencoded">
@@ -84,11 +87,28 @@
                 <label for="Correo">Correo</label>
                 <input class="inputs" type="text" size="30px">
                 <label for="cometarios">Escriba aca a mi Correo</label>
-                <textarea class="formComents" name="Servicios" id="Servicios" cols="30" rows="10" placeholder="Para que necesita contactarnos"></textarea>
+                <textarea class="formComents" name="Servicios" id="Servicios" cols="30" rows="10"
+                    placeholder="Para que necesita contactarnos"></textarea>
                 <input class="contactFormsubmitButton" type="submit" value="Enviar">
             </fieldset>
         </form>
-    </div>
+    </div>-->
+    <div class="mb-3 container">
+        <label for="name" class="form-label">Ingrese su Nombre</label>
+        <input type="text" class="form-control" id="name" placeholder="Nombre">
+      </div>
+      <div class="mb-3 container">
+        <label for="apellido" class="form-label">Ingrese su Apellido</label>
+        <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+      </div>
+      <div class="mb-3 container">
+        <label for="exampleFormControlInput1" class="form-label">Ingrese su E-mail</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3 container">
+        <label for="exampleFormControlTextarea1" class="form-label">Dejenos sus comentarios</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Para que nos contacta"></textarea>
+      </div>
     <hr>
     <footer class="container">
         <nav class="footerMenu">
@@ -113,5 +133,8 @@
             </div>
         </nav>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 </html>
