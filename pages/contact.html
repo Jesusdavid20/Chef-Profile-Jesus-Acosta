@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +10,11 @@
     <title>Chef profile</title>
 </head>
 <body>
-    <header class="container">
+    <header class="containerWrap">
         <div class="logoMain">
             <a href="../index.html"><img src="../assets/Logo de chef1.png" alt="logochef1"></a>
         </div>
-        <nav class="container">
+        <nav class="containerWrap">
             <ul class="menuArriba">
                 <li>
                     <a href="../index.html">Inicio</a>
@@ -34,7 +36,7 @@
             </div>
         </nav>
     </header>
-    <h1 class="container">Contactanos</h1>
+    <h1 class="containerWrap">Contactanos</h1>
     <div class="mobileMenu">
         <nav role="navigation">
             <div id="menuToggle">
@@ -63,7 +65,7 @@
         </nav>
     </div>
     <div class="mobileHeader">
-        <div class="container logoMainMobile">
+        <div class="containerWrap logoMainMobile">
             <a href="../index.html"><img src="../assets/Logo de chef1.png" alt="principal__logo"></a>
         </div>
         <h1 class="titleMobileMenu">Chef profile</h1>
@@ -71,26 +73,34 @@
             <input type="text" placeholder="Buscar">
         </div>
     </div>
-    <p class="container">Mi restaurant esta ubicado en: <br>El Salvador 5218 Soho, CP 1414 Buenos Aires</p>
-    <h2 class="container little__titles">Como contactarme:</h2>
-    <div class="container formContainer">
-        <form class="mainForm" method="get" action="" enctype="application/x-www-form-urlencoded">
-            <fieldset>
-                <legend>Datos del usuario</legend>
-                <label for="Nombre">Nombre</label>
-                <input class="inputs" type="text" size="30px" placeholder="    Nombre">
-                <label for="Apellido">Apellido</label>
-                <input class="inputs" type="text" size="30px">
-                <label for="Correo">Correo</label>
-                <input class="inputs" type="text" size="30px">
-                <label for="cometarios">Escriba aca a mi Correo</label>
-                <textarea class="formComents" name="Servicios" id="Servicios" cols="30" rows="10" placeholder="Para que necesita contactarnos"></textarea>
-                <input class="contactFormsubmitButton" type="submit" value="Enviar">
-            </fieldset>
-        </form>
-    </div>
+    <h2 class="containerWrap little__titles">Como contactarme:</h2>
+    <form class="containerWrap formBootstrap">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"></label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre...">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"></label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido...">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail...">
+            <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Escribanos un correo</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Dejenos sus comentarios"></textarea>
+          </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Mantener sesion iniciada</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <p class="containerWrap restaurantDirection">Mi restaurant esta ubicado en: <br>El Salvador 5218 Soho, CP 1414 Buenos Aires</p>
     <hr>
-    <footer class="container">
+    <footer class="containerWrap">
         <nav class="footerMenu">
             <ul>
                 <li>
@@ -113,5 +123,6 @@
             </div>
         </nav>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
