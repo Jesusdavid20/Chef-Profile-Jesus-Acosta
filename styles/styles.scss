@@ -2,11 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 
-$bodyColor: rgb(73, 57, 57);
-
-$principalFont: Oswald;
-
-$secondColor: #ededed;
+@import "vars" , "mixins" ;
 
 * {
     margin: 0;
@@ -177,6 +173,20 @@ h1.titleMobileMenu {
             width: 300px;
         }
     }
+
+    @include view(desktop) {
+        
+        .searchBar input {
+            display: inline-block;
+            height: 30px;
+            transition: width 0.5s;
+    
+            &:focus {
+                width: 300px;
+                box-shadow: 4px rgba(0, 217, 255, 0.637);
+            }
+        } 
+    } 
 }
 
 
@@ -203,6 +213,13 @@ h1.titleMobileMenu {
     max-width: 310px;
     margin: 0 auto;
     border-radius: 10px;
+
+    @include view(desktop) {
+
+            max-width: 1200px;
+            margin: auto;
+        
+    }
 }
 
 img {
@@ -296,8 +313,20 @@ img {
     margin-bottom: 20px;
     text-align: center;
     color: $secondColor;
+
 }
 
+@include view(desktop) {
+    .little__titles__noIndex {
+        font-size: 40px;
+        font-family: $principalFont;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: $secondColor;
+        width: 100%;
+    }
+}
 .eachRecipeSize__container {
     background-color: $secondColor;
     border-radius: 15px;
@@ -391,20 +420,6 @@ img {
         }
     }
 
-
-
-    .searchBar input {
-        display: inline-block;
-        height: 30px;
-        transition: width 0.5s;
-
-        &:focus {
-            width: 300px;
-            box-shadow: 4px rgba(0, 217, 255, 0.637);
-        }
-    }
-
-
     h1 {
         font-size: 80px;
         font-family: Fascinate;
@@ -431,10 +446,7 @@ img {
         color: $secondColor;
     }
 
-    .containerWrap {
-        max-width: 1200px;
-        margin: auto;
-    }
+
 
     .mainRecipe__container {
         display: flex;
@@ -573,16 +585,6 @@ img {
 
     .eachRecipeSize img:hover {
         border: 4px solid rgb(0, 183, 255);
-    }
-
-    .little__titles__noIndex {
-        font-size: 40px;
-        font-family: $principalFont;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-        color: $secondColor;
-        width: 100%;
     }
 
     /* CSS FOR ALL RECIPES */
