@@ -477,10 +477,6 @@ img {
     display: flex;
     flex-direction: column;
   }
-  /*.sinImagen__container {
-      display: flex;
-      flex-direction: column;
-  }*/
   /* RECIPE LIST */
   .eachRecipeSize__container {
     display: flex;
