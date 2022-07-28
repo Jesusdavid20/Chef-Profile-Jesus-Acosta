@@ -2,11 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 
-$bodyColor: rgb(73, 57, 57);
-
-$principalFont: Oswald;
-
-$secondColor: #ededed;
+@import "vars" , "mixins" ;
 
 * {
     margin: 0;
@@ -20,7 +16,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #000000;
+    color: $black;
     font-family: $principalFont;
 }
 
@@ -177,6 +173,20 @@ h1.titleMobileMenu {
             width: 300px;
         }
     }
+
+    @include view(desktop) {
+        
+        .searchBar input {
+            display: inline-block;
+            height: 30px;
+            transition: width 0.5s;
+    
+            &:focus {
+                width: 300px;
+                box-shadow: 4px rgba(0, 217, 255, 0.637);
+            }
+        } 
+    } 
 }
 
 
@@ -203,6 +213,13 @@ h1.titleMobileMenu {
     max-width: 310px;
     margin: 0 auto;
     border-radius: 10px;
+
+    @include view(desktop) {
+
+            max-width: 1200px;
+            margin: auto;
+        
+    }
 }
 
 img {
@@ -213,7 +230,7 @@ img {
     padding: 5px;
     color: $secondColor;
     font-family: $principalFont;
-    font-size: 20px;
+    font-size: $fontNormalSize;
     width: 99%;
 }
 
@@ -223,7 +240,7 @@ img {
 
 .carousel-item .carousel-caption p,
 .carousel-item .carousel-caption h5 {
-    color: #000000;
+    color: $black;
     font-family: $principalFont;
 }
 
@@ -290,14 +307,26 @@ img {
 }
 
 .little__titles__noIndex {
-    font-size: 40px;
+    font-size: $fontMediunSize;
     font-family: $principalFont;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     color: $secondColor;
+
 }
 
+@include view(desktop) {
+    .little__titles__noIndex {
+        font-size: $fontMediunSize;
+        font-family: $principalFont;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: $secondColor;
+        width: 100%;
+    }
+}
 .eachRecipeSize__container {
     background-color: $secondColor;
     border-radius: 15px;
@@ -370,40 +399,26 @@ img {
 
         a {
             padding: 5px;
-            border: 1px solid #000000;
-            background-color: #000000;
+            border: 1px solid $black;
+            background-color: $black;
             width: 200px;
             box-sizing: border-box;
             color: white;
             text-decoration: none;
             list-style-type: none;
             font-family: $principalFont;
-            font-size: 20px;
+            font-size: $fontNormalSize;
             margin-left: 20px;
             margin-right: 20px;
             border-radius: 9px;
 
             &:hover {
                 background-color: greenyellow;
-                color: #000000;
+                color: $black;
                 text-decoration: none;
             }
         }
     }
-
-
-
-    .searchBar input {
-        display: inline-block;
-        height: 30px;
-        transition: width 0.5s;
-
-        &:focus {
-            width: 300px;
-            box-shadow: 4px rgba(0, 217, 255, 0.637);
-        }
-    }
-
 
     h1 {
         font-size: 80px;
@@ -424,17 +439,14 @@ img {
     h2.little__titles {
         display: flex;
         justify-content: center;
-        font-size: 40px;
+        font-size: $fontMediunSize;
         font-family: $principalFont;
         margin-top: 20px;
         margin-bottom: 20px;
         color: $secondColor;
     }
 
-    .containerWrap {
-        max-width: 1200px;
-        margin: auto;
-    }
+
 
     .mainRecipe__container {
         display: flex;
@@ -541,11 +553,6 @@ img {
         flex-direction: column;
     }
 
-    /*.sinImagen__container {
-        display: flex;
-        flex-direction: column;
-    }*/
-
     /* RECIPE LIST */
 
     .eachRecipeSize__container {
@@ -575,16 +582,6 @@ img {
         border: 4px solid rgb(0, 183, 255);
     }
 
-    .little__titles__noIndex {
-        font-size: 40px;
-        font-family: $principalFont;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-        color: $secondColor;
-        width: 100%;
-    }
-
     /* CSS FOR ALL RECIPES */
 
     .recipes__img {
@@ -605,7 +602,7 @@ img {
     .formBootstrap {
         font-family: $principalFont;
         font-size: 16px;
-        color: #000000;
+        color: $black;
         background-color: $secondColor;
         padding: 20px;
     }
@@ -614,7 +611,7 @@ img {
         display: flex;
         font-family: $principalFont;
         justify-content: center;
-        font-size: 20px;
+        font-size: $fontNormalSize;
         margin: 20px;
     }
 
@@ -628,20 +625,20 @@ img {
     }
 
     hr {
-        border: 1px solid #000000;
+        border: 1px solid $black;
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
     nav.footerMenu ul li {
         font-family: $principalFont;
-        font-size: 20px;
+        font-size: $fontNormalSize;
         list-style: none;
         text-decoration: none;
 
         &:hover {
             background-color: greenyellow;
-            color: #000000;
+            color: $black;
         }
     }
 

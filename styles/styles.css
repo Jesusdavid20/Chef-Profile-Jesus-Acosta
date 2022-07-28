@@ -153,6 +153,17 @@ h1.titleMobileMenu {
 .searchBar input:focus {
   width: 300px;
 }
+@media screen and (min-width: 1200px) {
+  .searchBar .searchBar input {
+    display: inline-block;
+    height: 30px;
+    transition: width 0.5s;
+  }
+  .searchBar .searchBar input:focus {
+    width: 300px;
+    box-shadow: 4px rgba(0, 217, 255, 0.637);
+  }
+}
 
 /* ACA SE EMPIEZA A MODIFICAR EL CONTENIDO DE LA PAGINA */
 /* INDEX */
@@ -174,6 +185,12 @@ h1.titleMobileMenu {
   max-width: 310px;
   margin: 0 auto;
   border-radius: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .containerWrap {
+    max-width: 1200px;
+    margin: auto;
+  }
 }
 
 img {
@@ -264,6 +281,17 @@ img {
   color: #ededed;
 }
 
+@media screen and (min-width: 1200px) {
+  .little__titles__noIndex {
+    font-size: 40px;
+    font-family: Oswald;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ededed;
+    width: 100%;
+  }
+}
 .eachRecipeSize__container {
   background-color: #ededed;
   border-radius: 15px;
@@ -341,15 +369,6 @@ img {
     color: #000000;
     text-decoration: none;
   }
-  .searchBar input {
-    display: inline-block;
-    height: 30px;
-    transition: width 0.5s;
-  }
-  .searchBar input:focus {
-    width: 300px;
-    box-shadow: 4px rgba(0, 217, 255, 0.637);
-  }
   h1 {
     font-size: 80px;
     font-family: Fascinate;
@@ -370,10 +389,6 @@ img {
     margin-top: 20px;
     margin-bottom: 20px;
     color: #ededed;
-  }
-  .containerWrap {
-    max-width: 1200px;
-    margin: auto;
   }
   .mainRecipe__container {
     display: flex;
@@ -462,10 +477,6 @@ img {
     display: flex;
     flex-direction: column;
   }
-  .sinImagen__container {
-    display: flex;
-    flex-direction: column;
-  }
   /* RECIPE LIST */
   .eachRecipeSize__container {
     display: flex;
@@ -488,15 +499,6 @@ img {
   }
   .eachRecipeSize img:hover {
     border: 4px solid rgb(0, 183, 255);
-  }
-  .little__titles__noIndex {
-    font-size: 40px;
-    font-family: Oswald;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #ededed;
-    width: 100%;
   }
   /* CSS FOR ALL RECIPES */
   .recipes__img {
