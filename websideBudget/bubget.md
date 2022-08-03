@@ -6,7 +6,7 @@
  Chef Profile        2/8/2022           14/8/2022
 
 
-     Descripción                                                     Cantidad            Precio
+ **Descripción**                                                   **Cantidad**            **Precio**
 
   1. Desarrollo del sitio ---------------------------------------------- 1 -------------- $70.000,00
 
