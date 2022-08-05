@@ -33,6 +33,26 @@ h1.containerWrap {
 .mobileMenu {
     display: inline-block;
     margin-left: -15px;
+    background-color: #668ba4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    max-height: 120px;
+    min-height: 10px;
+
+    .mobileHeader {
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+            display: flex;
+            max-width: 80px;
+            margin-right: 10px;
+        }
+    }
 }
 
 #menuToggle {
@@ -97,7 +117,7 @@ h1.containerWrap {
 
 #menuToggle input:checked~span {
     opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
+    transform: rotate(45deg) translate(1px, -2px);
     background: #232323;
 }
 
@@ -134,29 +154,19 @@ h1.containerWrap {
     transform: none;
 }
 
-.logoMainMobile {
-    margin: 0 auto;
-    max-width: 100px;
-
-    img {
-        max-width: 200px;
-        margin-left: 18%;
-        margin-bottom: 10px;
-    }
-}
-
-
 h1.titleMobileMenu {
+    display: flex;
     font-family: Fascinate;
+    margin-left: 35px;
     color: $secondColor;
-    text-align: center;
-    margin-bottom: 20px;
+    align-items: center;
 }
 
-.searchBar {
-    margin: 20px auto;
+.mobileSearchBar {
+    display: flex;
     max-width: 350px;
     align-items: center;
+    margin: 15px auto;
 
     input {
         margin: 0 auto;
@@ -170,23 +180,10 @@ h1.titleMobileMenu {
         display: flex;
         
         &:focus {
-            width: 300px;
+            width: 200px;
         }
     }
 
-    @include view(desktop) {
-        
-        .searchBar input {
-            display: inline-block;
-            height: 30px;
-            transition: width 0.5s;
-    
-            &:focus {
-                width: 300px;
-                box-shadow: 4px rgba(0, 217, 255, 0.637);
-            }
-        } 
-    } 
 }
 
 
@@ -360,10 +357,17 @@ img {
         display: none;
     }
 
+    .mobileSearchBar {
+        display: none;
+    }
+
     header {
         display: flex;
-        flex-direction: column;
-        width: 50%;
+        flex-direction: row;
+        max-width: 1400px;
+        max-height: 150px;
+        justify-content: space-evenly;
+        background-color: #668ba4;
         margin: auto;
         margin-bottom: 10px;
 
@@ -374,6 +378,21 @@ img {
         }
     }
 
+    .searchBar input {
+        margin: 0 auto;
+        width: 150px;
+        border-radius: 9px;
+        padding: 2px;
+        box-sizing: border-box;
+        font-family: $principalFont;
+        text-align: center;
+        transition: width 0.5s;
+        display: flex;
+        
+        &:focus {
+            width: 160px;
+        }
+    }
 
     .logoMain {
         margin: auto;
@@ -382,8 +401,7 @@ img {
 
         img {
             display: inline-block;
-            width: 250px;
-            height: 300px;
+            max-width: 80px;
             margin: auto;
         }
     }
@@ -393,14 +411,12 @@ img {
         display: flex;
         flex-direction: row;
         margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 500px;
+        margin-right: 40px;
+        max-width: 500px;
+        display: flex;
+        justify-content: space-evenly;
 
         a {
-            padding: 5px;
-            border: 1px solid $black;
-            background-color: $black;
             width: 200px;
             box-sizing: border-box;
             color: white;
@@ -410,22 +426,22 @@ img {
             font-size: $fontNormalSize;
             margin-left: 20px;
             margin-right: 20px;
-            border-radius: 9px;
 
             &:hover {
-                background-color: greenyellow;
-                color: $black;
+                font-weight: bolder;
+                color: white;
                 text-decoration: none;
             }
         }
     }
 
-    h1 {
-        font-size: 80px;
+    .mainTittle {
+        font-size: 50px;
         font-family: Fascinate;
+        color: white;
         margin: auto;
         text-align: center;
-        width: 50%;
+        max-width: 400px;
     }
 
     h1.containerWrap {
@@ -642,4 +658,4 @@ img {
         }
     }
 
-}
+    }

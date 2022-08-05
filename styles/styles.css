@@ -28,6 +28,24 @@ h1.containerWrap {
 .mobileMenu {
   display: inline-block;
   margin-left: -15px;
+  background-color: #668ba4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  max-height: 120px;
+  min-height: 10px;
+}
+.mobileMenu .mobileHeader {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mobileMenu .mobileHeader img {
+  display: flex;
+  max-width: 80px;
+  margin-right: 10px;
 }
 
 #menuToggle {
@@ -82,7 +100,7 @@ h1.containerWrap {
 
 #menuToggle input:checked ~ span {
   opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(45deg) translate(1px, -2px);
   background: #232323;
 }
 
@@ -117,29 +135,21 @@ h1.containerWrap {
   transform: none;
 }
 
-.logoMainMobile {
-  margin: 0 auto;
-  max-width: 100px;
-}
-.logoMainMobile img {
-  max-width: 200px;
-  margin-left: 18%;
-  margin-bottom: 10px;
-}
-
 h1.titleMobileMenu {
+  display: flex;
   font-family: Fascinate;
+  margin-left: 35px;
   color: #ededed;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.searchBar {
-  margin: 20px auto;
-  max-width: 350px;
   align-items: center;
 }
-.searchBar input {
+
+.mobileSearchBar {
+  display: flex;
+  max-width: 350px;
+  align-items: center;
+  margin: 15px auto;
+}
+.mobileSearchBar input {
   margin: 0 auto;
   width: 150px;
   border-radius: 9px;
@@ -150,19 +160,8 @@ h1.titleMobileMenu {
   transition: width 0.5s;
   display: flex;
 }
-.searchBar input:focus {
-  width: 300px;
-}
-@media screen and (min-width: 1200px) {
-  .searchBar .searchBar input {
-    display: inline-block;
-    height: 30px;
-    transition: width 0.5s;
-  }
-  .searchBar .searchBar input:focus {
-    width: 300px;
-    box-shadow: 4px rgba(0, 217, 255, 0.637);
-  }
+.mobileSearchBar input:focus {
+  width: 200px;
 }
 
 /* ACA SE EMPIEZA A MODIFICAR EL CONTENIDO DE LA PAGINA */
@@ -319,16 +318,36 @@ img {
   .mobileHeader {
     display: none;
   }
+  .mobileSearchBar {
+    display: none;
+  }
   header {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    flex-direction: row;
+    max-width: 1400px;
+    max-height: 150px;
+    justify-content: space-evenly;
+    background-color: #668ba4;
     margin: auto;
     margin-bottom: 10px;
   }
   header nav {
     display: flex;
     align-items: center;
+  }
+  .searchBar input {
+    margin: 0 auto;
+    width: 150px;
+    border-radius: 9px;
+    padding: 2px;
+    box-sizing: border-box;
+    font-family: Oswald;
+    text-align: center;
+    transition: width 0.5s;
+    display: flex;
+  }
+  .searchBar input:focus {
+    width: 160px;
   }
   .logoMain {
     margin: auto;
@@ -337,22 +356,19 @@ img {
   }
   .logoMain img {
     display: inline-block;
-    width: 250px;
-    height: 300px;
+    max-width: 80px;
     margin: auto;
   }
   ul.menuArriba {
     display: flex;
     flex-direction: row;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 500px;
+    margin-right: 40px;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-evenly;
   }
   ul.menuArriba a {
-    padding: 5px;
-    border: 1px solid #000000;
-    background-color: #000000;
     width: 200px;
     box-sizing: border-box;
     color: white;
@@ -362,19 +378,19 @@ img {
     font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    border-radius: 9px;
   }
   ul.menuArriba a:hover {
-    background-color: greenyellow;
-    color: #000000;
+    font-weight: bolder;
+    color: white;
     text-decoration: none;
   }
-  h1 {
-    font-size: 80px;
+  .mainTittle {
+    font-size: 50px;
     font-family: Fascinate;
+    color: white;
     margin: auto;
     text-align: center;
-    width: 50%;
+    max-width: 400px;
   }
   h1.containerWrap {
     display: block;
