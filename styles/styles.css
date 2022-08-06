@@ -18,6 +18,10 @@ a {
 
 /* HEADER PARA MOBILE */
 header {
+  background-color: #668ba4;
+}
+
+.desktopMenu {
   display: none;
 }
 
@@ -27,33 +31,26 @@ h1.containerWrap {
 
 .mobileMenu {
   display: inline-block;
-  margin-left: -15px;
-  background-color: #668ba4;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 15px;
-  max-height: 120px;
-  min-height: 10px;
+  align-items: center;
+  padding: 15px;
 }
 .mobileMenu .mobileHeader {
   align-self: center;
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 .mobileMenu .mobileHeader img {
   display: flex;
   max-width: 80px;
-  margin-right: 10px;
 }
 
 #menuToggle {
   display: block;
   position: relative;
-  top: 50px;
-  left: 50px;
-  z-index: 1;
+  z-index: 3;
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -64,11 +61,9 @@ h1.containerWrap {
   width: 40px;
   height: 32px;
   position: absolute;
-  top: -7px;
-  left: -5px;
   cursor: pointer;
   opacity: 0;
-  z-index: 2;
+  z-index: 3;
   -webkit-touch-callout: none;
 }
 #menuToggle span {
@@ -77,7 +72,7 @@ h1.containerWrap {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #cdcdcd;
+  background: white;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -136,9 +131,9 @@ h1.containerWrap {
 }
 
 h1.titleMobileMenu {
+  margin: 0;
   display: flex;
   font-family: Fascinate;
-  margin-left: 35px;
   color: #ededed;
   align-items: center;
 }
@@ -152,11 +147,10 @@ h1.titleMobileMenu {
 .mobileSearchBar input {
   margin: 0 auto;
   width: 150px;
-  border-radius: 9px;
+  border-radius: 4px;
   padding: 2px;
   box-sizing: border-box;
   font-family: Oswald;
-  text-align: center;
   transition: width 0.5s;
   display: flex;
 }
@@ -181,7 +175,7 @@ h1.titleMobileMenu {
 }
 
 .containerWrap {
-  max-width: 310px;
+  max-width: 420px;
   margin: 0 auto;
   border-radius: 10px;
 }
@@ -321,9 +315,11 @@ img {
   .mobileSearchBar {
     display: none;
   }
-  header {
+  .desktopMenu {
+    display: block;
+  }
+  .desktopMenu {
     display: flex;
-    flex-direction: row;
     max-width: 1400px;
     max-height: 150px;
     justify-content: space-evenly;
@@ -331,18 +327,17 @@ img {
     margin: auto;
     margin-bottom: 10px;
   }
-  header nav {
+  .desktopMenu nav {
     display: flex;
     align-items: center;
   }
   .searchBar input {
     margin: 0 auto;
     width: 150px;
-    border-radius: 9px;
+    border-radius: 3px;
     padding: 2px;
     box-sizing: border-box;
     font-family: Oswald;
-    text-align: center;
     transition: width 0.5s;
     display: flex;
   }
@@ -361,7 +356,6 @@ img {
   }
   ul.menuArriba {
     display: flex;
-    flex-direction: row;
     margin: auto;
     margin-right: 40px;
     max-width: 500px;
