@@ -23,7 +23,7 @@ a {
 /* HEADER PARA MOBILE */
 
 header{
-    background-color: #668ba4;
+    background-color: $thirdColor;
 }
 
 .desktopMenu {
@@ -104,7 +104,8 @@ h1.containerWrap {
         transition: color 0.3s ease;
 
         &:hover {
-            color: tomato;
+            color: $bodyColor;
+            font-weight: bolder;
         }
     }
 
@@ -153,7 +154,7 @@ h1.titleMobileMenu {
     margin: 0;
     display: flex;
     font-family: Fascinate;
-    color: $secondColor;
+    color: $bodyColor;
     align-items: center;
 }
 
@@ -313,7 +314,7 @@ img {
         margin-top: 20px;
         margin-bottom: 20px;
         text-align: center;
-        color: $secondColor;
+        color: $secondsFontsColors;
         width: 100%;
     }
 }
@@ -363,7 +364,7 @@ img {
         max-width: 1400px;
         max-height: 150px;
         justify-content: space-evenly;
-        background-color: #668ba4;
+        background-color: $thirdColor;
         margin: auto;
         margin-bottom: 10px;
 
@@ -453,18 +454,7 @@ img {
         font-family: $principalFont;
         margin-top: 20px;
         margin-bottom: 20px;
-        color: $secondColor;
-    }
-
-
-
-    .mainRecipe__container {
-        display: flex;
-        margin: 40px;
-        background-color: rgb(73, 57, 57);
-        align-items: center;
-        border-radius: 10px;
-        padding: 10px;
+        color: $secondsFontsColors;
     }
 
     .mainSectionIndex {
@@ -627,29 +617,58 @@ img {
 
     /* RECIPES */
 
-    /* FOOTER */
+}
 
-    footer nav {
+/* FOOTER */
+
+footer {
+    background-color: $thirdColor;
+    padding: 15px;
+
+    .footerItems {     
         display: flex;
-        flex-direction: row;
-    }
+        justify-content: space-between;
+        align-items: center;
 
-    hr {
-        border: 1px solid $black;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+        .logoFooter {
+            display: block;
+            .mainImageChef {                    
+                max-width: 200px;
+            }
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: row;
 
-    nav.footerMenu ul li {
-        font-family: $principalFont;
-        font-size: $fontNormalSize;
-        list-style: none;
-        text-decoration: none;
+            ul li {
+                font-family: $principalFont;
+                font-size: $fontNormalSize;
+                list-style: none;
+                text-decoration: none;
+                color: $bodyColor;
+    
+                a {
+                    color: $bodyColor;
 
-        &:hover {
-            background-color: greenyellow;
-            color: $black;
+                    &:hover {
+                        color: $bodyColor;
+                        font-weight: bold;
+                    }
+                }
+    
+            &:hover {
+                color: $bodyColor;
+                font-weight: bold;
+            }
         }
     }
-
     }
+
+}
+
+hr {
+    border: 1px solid $black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
