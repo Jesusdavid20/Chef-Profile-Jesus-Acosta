@@ -47,7 +47,7 @@
         <div class="mobileMenu">
             <nav role="navigation">
                 <div id="menuToggle">
-                    <input type="checkbox" />
+                    <input id="checkbox" type="checkbox" />
                     <span></span>
                     <span></span>
                     <span></span>
@@ -64,9 +64,11 @@
                         <a href="./pages/contact.html">
                             <li>Contacto</li>
                         </a>
-                        <a href="#">
-                            <li>Recomendaciones</li>
-                        </a>
+                            <li>
+                                <div class="mobileSearchBar">
+                                    <input type="text" placeholder="Buscar">
+                                </div>
+                            </li>
                     </ul>
                 </div>
             </nav>
@@ -78,9 +80,6 @@
             </div>
         </div>
     </header>
-    <div class="mobileSearchBar">
-        <input type="text" placeholder="Buscar">
-    </div>
     <section class="containerWrap mainSectionIndex">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">

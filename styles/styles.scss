@@ -63,7 +63,7 @@ h1.containerWrap {
     -webkit-user-select: none;
     user-select: none;
 
-    input {
+    #checkbox {
         display: block;
         width: 40px;
         height: 32px;
@@ -161,10 +161,9 @@ h1.titleMobileMenu {
     display: flex;
     max-width: 350px;
     align-items: center;
-    margin: 15px auto;
+    margin: 0 auto;
 
     input {
-        margin: 0 auto;
         width: 150px;
         border-radius: 4px;
         padding: 2px;
