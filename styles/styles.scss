@@ -22,7 +22,11 @@ a {
 
 /* HEADER PARA MOBILE */
 
-header {
+header{
+    background-color: $thirdColor;
+}
+
+.desktopMenu {
     display: none;
 }
 
@@ -32,30 +36,41 @@ h1.containerWrap {
 
 .mobileMenu {
     display: inline-block;
-    margin-left: -15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+    padding: 15px;
+
+    .mobileHeader {
+        align-self: center;
+        display: flex;
+        align-items: center;
+
+        img {
+            display: flex;
+            max-width: 80px;
+        }
+    }
 }
 
 #menuToggle {
     display: block;
     position: relative;
-    top: 50px;
-    left: 50px;
 
-    z-index: 1;
+    z-index: 3;
 
     -webkit-user-select: none;
     user-select: none;
 
-    input {
+    #checkbox {
         display: block;
         width: 40px;
         height: 32px;
         position: absolute;
-        top: -7px;
-        left: -5px;
         cursor: pointer;
         opacity: 0;
-        z-index: 2;
+        z-index: 3;
         -webkit-touch-callout: none;
     }
 
@@ -65,7 +80,7 @@ h1.containerWrap {
         height: 4px;
         margin-bottom: 5px;
         position: relative;
-        background: #cdcdcd;
+        background: white;
         border-radius: 3px;
         z-index: 1;
         transform-origin: 4px 0px;
@@ -89,7 +104,8 @@ h1.containerWrap {
         transition: color 0.3s ease;
 
         &:hover {
-            color: tomato;
+            color: $bodyColor;
+            font-weight: bolder;
         }
     }
 
@@ -97,7 +113,7 @@ h1.containerWrap {
 
 #menuToggle input:checked~span {
     opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
+    transform: rotate(45deg) translate(1px, -2px);
     background: #232323;
 }
 
@@ -134,59 +150,34 @@ h1.containerWrap {
     transform: none;
 }
 
-.logoMainMobile {
-    margin: 0 auto;
-    max-width: 100px;
-
-    img {
-        max-width: 200px;
-        margin-left: 18%;
-        margin-bottom: 10px;
-    }
-}
-
-
 h1.titleMobileMenu {
+    margin: 0;
+    display: flex;
     font-family: Fascinate;
-    color: $secondColor;
-    text-align: center;
-    margin-bottom: 20px;
+    color: $bodyColor;
+    align-items: center;
 }
 
-.searchBar {
-    margin: 20px auto;
+.mobileSearchBar {
+    display: flex;
     max-width: 350px;
     align-items: center;
+    margin: 0 auto;
 
     input {
-        margin: 0 auto;
         width: 150px;
-        border-radius: 9px;
+        border-radius: 4px;
         padding: 2px;
         box-sizing: border-box;
         font-family: $principalFont;
-        text-align: center;
         transition: width 0.5s;
         display: flex;
         
         &:focus {
-            width: 300px;
+            width: 200px;
         }
     }
 
-    @include view(desktop) {
-        
-        .searchBar input {
-            display: inline-block;
-            height: 30px;
-            transition: width 0.5s;
-    
-            &:focus {
-                width: 300px;
-                box-shadow: 4px rgba(0, 217, 255, 0.637);
-            }
-        } 
-    } 
 }
 
 
@@ -210,7 +201,7 @@ h1.titleMobileMenu {
 }
 
 .containerWrap {
-    max-width: 310px;
+    max-width: 420px;
     margin: 0 auto;
     border-radius: 10px;
 
@@ -300,11 +291,16 @@ img {
 
 /* RECIPE LIST */
 
-.eachRecipeSize {
-    display: block;
-    max-width: 300px;
-    text-align: center;
+.eachRecipeSize__container {
+    margin-bottom: 20px;
+
+    
+    .eachRecipeSize {
+        display: block;
+        text-align: center;
+    }
 }
+
 
 .little__titles__noIndex {
     font-size: $fontMediunSize;
@@ -312,7 +308,7 @@ img {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-    color: $secondColor;
+    color: $black;
 
 }
 
@@ -323,7 +319,7 @@ img {
         margin-top: 20px;
         margin-bottom: 20px;
         text-align: center;
-        color: $secondColor;
+        color: $secondsFontsColors;
         width: 100%;
     }
 }
@@ -360,10 +356,20 @@ img {
         display: none;
     }
 
-    header {
+    .mobileSearchBar {
+        display: none;
+    }
+
+    .desktopMenu {
+        display: block;
+    }
+
+    .desktopMenu {
         display: flex;
-        flex-direction: column;
-        width: 50%;
+        max-width: 1400px;
+        max-height: 150px;
+        justify-content: space-evenly;
+        background-color: $thirdColor;
         margin: auto;
         margin-bottom: 10px;
 
@@ -374,6 +380,20 @@ img {
         }
     }
 
+    .searchBar input {
+        margin: 0 auto;
+        width: 150px;
+        border-radius: 3px;
+        padding: 2px;
+        box-sizing: border-box;
+        font-family: $principalFont;
+        transition: transform 0.5s;
+        display: flex;
+        
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
 
     .logoMain {
         margin: auto;
@@ -382,8 +402,7 @@ img {
 
         img {
             display: inline-block;
-            width: 250px;
-            height: 300px;
+            max-width: 80px;
             margin: auto;
         }
     }
@@ -391,16 +410,13 @@ img {
 
     ul.menuArriba {
         display: flex;
-        flex-direction: row;
         margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 500px;
+        margin-right: 40px;
+        max-width: 500px;
+        display: flex;
+        justify-content: space-evenly;
 
         a {
-            padding: 5px;
-            border: 1px solid $black;
-            background-color: $black;
             width: 200px;
             box-sizing: border-box;
             color: white;
@@ -410,22 +426,22 @@ img {
             font-size: $fontNormalSize;
             margin-left: 20px;
             margin-right: 20px;
-            border-radius: 9px;
 
             &:hover {
-                background-color: greenyellow;
-                color: $black;
+                font-weight: bolder;
+                color: white;
                 text-decoration: none;
             }
         }
     }
 
-    h1 {
-        font-size: 80px;
+    .mainTittle {
+        font-size: 50px;
         font-family: Fascinate;
+        color: white;
         margin: auto;
         text-align: center;
-        width: 50%;
+        max-width: 400px;
     }
 
     h1.containerWrap {
@@ -443,18 +459,7 @@ img {
         font-family: $principalFont;
         margin-top: 20px;
         margin-bottom: 20px;
-        color: $secondColor;
-    }
-
-
-
-    .mainRecipe__container {
-        display: flex;
-        margin: 40px;
-        background-color: rgb(73, 57, 57);
-        align-items: center;
-        border-radius: 10px;
-        padding: 10px;
+        color: $secondsFontsColors;
     }
 
     .mainSectionIndex {
@@ -515,6 +520,7 @@ img {
         margin-bottom: 20px;
         display: flex;
         justify-content: space-evenly;
+        text-align: center;
     }
 
     .secondSectionIndexBellowBoxImages {
@@ -522,9 +528,11 @@ img {
         margin-bottom: 20px;
         display: flex;
         justify-content: space-evenly;
+        text-align: center;
     }
 
     .secondSectionIndex {
+        margin-bottom: 20px;
         background-color: $secondColor;
         display: grid;
         grid-template-columns: auto;
@@ -532,11 +540,15 @@ img {
         grid-template-areas: "secondSectionIndexBoxImages""secondSectionIndexBellowBoxImages";
     }
 
-    .sinImagen {
-        background-color: rgb(73, 57, 57);
-        width: 200px;
-        height: 200px;
-        text-align: center;
+    .sinImagen__container {
+        display: flex;
+        flex-direction: column;
+        .sinImagen {
+            background-color: rgb(73, 57, 57);
+            width: 200px;
+            height: 200px;
+            text-align: center;
+        }
     }
 
     .secondSectionIndex div {
@@ -560,27 +572,35 @@ img {
         background-color: $secondColor;
         border-radius: 15px;
         justify-content: space-evenly;
-        padding-top: 5px;
-    }
-
-    .eachRecipeSize {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        max-width: 30%;
-        margin: 10px;
-        border-radius: 10px;
-        transition: max-width 2s;
-
-        &:hover {
-            max-width: 500px;
+        padding: 15px;
+        margin-bottom: 20px;
+        
+        .eachRecipeSize {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            max-width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.5s;
+    
+            &:hover {
+                transform: scale(1.1);
+            }
+            
+            @include view(mobile){
+            }
         }
-    }
 
+        }
 
+    
     .eachRecipeSize img:hover {
         border: 4px solid rgb(0, 183, 255);
+        opacity: 1;
     }
+    
+
 
     /* CSS FOR ALL RECIPES */
 
@@ -597,49 +617,82 @@ img {
     }
 
 
-    /* CONTACT */
-
-    .formBootstrap {
-        font-family: $principalFont;
-        font-size: 16px;
-        color: $black;
-        background-color: $secondColor;
-        padding: 20px;
-    }
-
-    .restaurantDirection {
-        display: flex;
-        font-family: $principalFont;
-        justify-content: center;
-        font-size: $fontNormalSize;
-        margin: 20px;
-    }
-
+    
     /* RECIPES */
+    
+}
 
-    /* FOOTER */
+/* CONTACT */
 
-    footer nav {
+.formBootstrap {
+    font-family: $principalFont;
+    font-size: 16px;
+    color: $black;
+    background-color: $secondColor;
+    padding: 20px;
+}
+
+.restaurantDirection {
+    display: flex;
+    font-family: $principalFont;
+    justify-content: center;
+    font-size: $fontNormalSize;
+    margin: 20px;
+}
+/* FOOTER */
+
+footer {
+    background-color: $thirdColor;
+    padding: 15px;
+
+    .footerItems {     
         display: flex;
-        flex-direction: row;
-    }
+        justify-content: space-between;
+        align-items: center;
 
-    hr {
-        border: 1px solid $black;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+        .logoFooter {
+            display: block;
 
-    nav.footerMenu ul li {
-        font-family: $principalFont;
-        font-size: $fontNormalSize;
-        list-style: none;
-        text-decoration: none;
+            a {
+                display: block;
+            }
+            .mainImageChef {                    
+                max-width: 200px;
+            }
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: row;
 
-        &:hover {
-            background-color: greenyellow;
-            color: $black;
+            ul li {
+                font-family: $principalFont;
+                font-size: $fontNormalSize;
+                list-style: none;
+                text-decoration: none;
+                color: $bodyColor;
+    
+                a {
+                    color: $bodyColor;
+
+                    &:hover {
+                        color: $bodyColor;
+                        font-weight: bold;
+                    }
+                }
+    
+            &:hover {
+                color: $bodyColor;
+                font-weight: bold;
+            }
         }
     }
+    }
 
+}
+
+hr {
+    border: 1px solid $black;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
